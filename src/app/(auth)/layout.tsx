@@ -16,7 +16,13 @@ export default function AuthLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={
+          inter.className + ` flex items-center justify-center min-h-screen`
+        }
+      >
+        {children}
+      </body>
     </html>
   );
 }
