@@ -33,7 +33,7 @@ export default function Header() {
                 <span className="sr-only">Sign In</span>
               </div>
             </Link>
-            <Link href={siteConfig.shoppingCart}>
+            <Link href={siteConfig.shop.shoppingCart}>
               <div
                 className={buttonVariants({
                   size: 'icon',
