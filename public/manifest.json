@@ -1,12 +1,10 @@
 {
-  "name": "vanRooD Stream Date",
-  "description": "Mityczna strona, która powiada, że vanRooD ten miły, przystojny i czarujący streamer kiedyś ponownie włączy równie dobrą transmisję, i dokona się reset legendarnego licznika.",
-  "short_name": "vanRooD Date",
+  "name": "3 Stupid Men Online Store",
+  "description": "3 Stupid Men to nowatorska marka odzieżowa, która z impetem wkracza na scenę mody, łamiąc konwencje i celebrując ducha indywidualizmu. Z misją wywrócenia przemysłu modowego do góry nogami, 3 Stupid Men zdobywa uwagę entuzjastów mody dzięki swoim odważnym projektom i innowacyjnemu podejściu. Marka ta nie boi się prowokować, łącząc humor, ironię i dystans w unikalnych kolekcjach, które zachwycają oryginalnością i jakością. 3 Stupid Men to wybór dla tych, którzy chcą wyrazić siebie poprzez modę i cenią ubrania, które nie tylko wyglądają dobrze, ale także wywołują uśmiech na twarzy.",
+  "short_name": "3 Stupid Men",
   "id": "/",
   "start_url": "/",
   "lang": "pl-PL",
-  "theme_color": "#15243a",
-  "background_color": "#15243a",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
