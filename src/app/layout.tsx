@@ -3,13 +3,8 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Head from 'next/head';
-import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const viewport: Viewport = {
-  themeColor: '#ff5adc',
-};
 
 export const metadata: Metadata = {
   manifest: 'https://3stupidmen.com/manifest.json',
@@ -53,28 +48,11 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <Head>
-        <meta name="theme-color" content="#ff5adc" id="theme-color-meta" />
+        {/* Ustawienie theme-color dla embedów (Discord, Twitter, etc.) */}
+        <meta property="og:theme-color" content="#ff5adc" />
+        <meta name="twitter:theme-color" content="#ff5adc" />
       </Head>
       <body className={cn(inter.className, 'flex flex-col')}>{children}</body>
-      <Script
-        id="theme-color-script"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-              (function() {
-                function isEmbedded() {
-                  return window.self !== window.top;
-                }
-
-                var themeColorMeta = document.querySelector('meta[name="theme-color"]');
-
-                if (themeColorMeta && !isEmbedded()) {
-                  themeColorMeta.setAttribute('content', '#ffffff');
-                }
-              })();
-            `,
-        }}
-      />
     </html>
   );
 }
