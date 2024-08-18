@@ -2,12 +2,9 @@ import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] });
-
-export const viewport: Viewport = {
-  themeColor: '#ff5adc',
-};
 
 export const metadata: Metadata = {
   manifest: 'https://3stupidmen.com/manifest.json',
@@ -50,6 +47,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <Head>
+        <meta name="theme-color" content="#ff5adc" id="theme-color-meta" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function isEmbedded() {
+                  return window.self !== window.top;
+                }
+
+                var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+                if (themeColorMeta && !isEmbedded()) {
+                  // Zmień kolor na neutralny tylko gdy strona nie jest osadzona
+                  themeColorMeta.setAttribute('content', '#ffffff');
+                }
+              })();
+            `,
+          }}
+        />
+      </Head>
       <body className={cn(inter.className, 'flex flex-col')}>{children}</body>
     </html>
   );
