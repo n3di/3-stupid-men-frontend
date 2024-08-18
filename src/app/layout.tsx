@@ -47,11 +47,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <Head>
-        {/* Ustawienie theme-color dla embedów (Discord, Twitter, etc.) */}
-        <meta property="og:theme-color" content="#ff5adc" />
-        <meta name="twitter:theme-color" content="#ff5adc" />
-      </Head>
       <body className={cn(inter.className, 'flex flex-col')}>{children}</body>
     </html>
   );
