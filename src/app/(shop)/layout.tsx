@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '../globals.css';
 import Header from './_components/Header';
-
-const inter = Inter({ subsets: ['latin'] });
+import { CartProvider } from './_components/Cart/CartContext';
+import Footer from './_components/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,8 +16,13 @@ export default function ShopLayout({
 }>) {
   return (
     <>
-      <Header />
-      {children}
+      <CartProvider>
+        <Header />
+        <main className="flex-1 flex justify-center items-center">
+          {children}
+        </main>
+        <Footer />
+      </CartProvider>
     </>
   );
 }

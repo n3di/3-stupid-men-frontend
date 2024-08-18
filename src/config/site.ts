@@ -8,52 +8,70 @@ export const createSiteConfig = () => {
     description: '3 Stupid Man create shop for you.',
     shop: {
       name: '3 Stupid Man',
-      navigation: [
+      headerMenu: [
         {
-          title: 'Home',
-          href: '/',
+          title: 'All',
+          path: '/',
         },
         {
-          title: 'Collections',
-          href: '/collections',
+          title: 'Shirts',
+          path: '/collections',
         },
         {
-          title: 'Categories',
-          href: '/categories',
+          title: 'Stickers',
+          path: '/categories',
+        },
+      ],
+      footerMenu: [
+        {
+          title: 'Terms & Conditions',
+          path: '/terms-conditions',
+        },
+        {
+          title: 'Shipping & Returns Policy',
+          path: '/shipping-return-policy',
+        },
+        {
+          title: 'Privacy Policy',
+          path: '/privacy-policy',
+        },
+        {
+          title: 'FAQ',
+          path: '/frequently-asked-questions',
         },
       ],
       shoppingCart: '/cart',
     },
     securityRoot,
     dashboard: {
-      navigation: [
+      sideMenu: [
         {
           title: 'Overview',
-          href: `${securityRoot}`,
+          path: `${securityRoot}`,
         },
         {
           title: 'Products',
-          href: `${securityRoot}/products`,
+          path: `${securityRoot}/products`,
         },
         {
           title: 'Orders',
-          href: `${securityRoot}/orders`,
+          path: `${securityRoot}/orders`,
         },
         {
           title: 'Customers',
-          href: `${securityRoot}/customers`,
+          path: `${securityRoot}/customers`,
         },
         {
           title: 'Analytics',
-          href: `${securityRoot}/analytics`,
+          path: `${securityRoot}/analytics`,
         },
         {
           title: 'Promotions',
-          href: `${securityRoot}/promotions`,
+          path: `${securityRoot}/promotions`,
         },
         {
           title: 'Reviews',
-          href: `${securityRoot}/reviews`,
+          path: `${securityRoot}/reviews`,
         },
       ],
     },

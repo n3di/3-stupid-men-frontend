@@ -1,7 +1,7 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <section className="">
       <h2 className="mb-3 text-2xl font-semibold">SHOP</h2>
-    </main>
+    </section>
   );
 }
