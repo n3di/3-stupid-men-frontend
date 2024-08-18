@@ -12,6 +12,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { siteConfig } from '@/config/site';
 import { Icons } from '@/components/ui/icons';
+import { Checkbox } from '@/components/ui/checkbox';
+import SignUpForm from './_components/SignUpForm';
 
 export default function RegisterForm() {
   return (
@@ -33,42 +35,10 @@ export default function RegisterForm() {
             </Link>
           </div>
         </CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
-          <div className="flex items-center gap-2">
-            <div className="grid gap-2">
-              <Label htmlFor="first-name">First Name</Label>
-              <Input id="first-name" type="text" placeholder="John" required />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="last-name">Last Name</Label>
-              <Input id="last-name" type="text" placeholder="Doe" required />
-            </div>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="m@example.com"
-              required
-            />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" required />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="repeat-password">Repeat Password</Label>
-            <Input id="repeat-password" type="repeat-password" required />
-          </div>
-          <Button type="submit" className="w-full">
-            Sign Up
-          </Button>
+          <SignUpForm />
           <Button variant="outline" className="w-full">
             Sign Up with Google
           </Button>
