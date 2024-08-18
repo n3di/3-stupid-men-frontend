@@ -15,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
+import { useState } from 'react';
 
 const formSchema = z
   .object({
@@ -36,6 +37,12 @@ const formSchema = z
   });
 
 export default function SignUpForm() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -52,6 +59,14 @@ export default function SignUpForm() {
     console.log(values);
   }
 
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    onChange: (...event: any[]) => void
+  ) => {
+    const newValue = e.target.value.replace(/\s/g, '');
+    onChange(newValue);
+  };
+
   const { handleSubmit, control, formState } = form;
   const { isSubmitting } = formState;
 
@@ -66,7 +81,12 @@ export default function SignUpForm() {
               <FormItem>
                 <FormLabel>First Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John" {...field} />
+                  <Input
+                    placeholder="John"
+                    {...field}
+                    value={field.value}
+                    onChange={(e) => handleInputChange(e, field.onChange)}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -79,7 +99,12 @@ export default function SignUpForm() {
               <FormItem>
                 <FormLabel>Last Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Doe" {...field} />
+                  <Input
+                    placeholder="Doe"
+                    {...field}
+                    value={field.value}
+                    onChange={(e) => handleInputChange(e, field.onChange)}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -93,7 +118,12 @@ export default function SignUpForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="m@example.com" {...field} />
+                <Input
+                  placeholder="m@example.com"
+                  {...field}
+                  value={field.value}
+                  onChange={(e) => handleInputChange(e, field.onChange)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -106,7 +136,13 @@ export default function SignUpForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="********" {...field} />
+                <Input
+                  type="password"
+                  placeholder="********"
+                  {...field}
+                  value={field.value}
+                  onChange={(e) => handleInputChange(e, field.onChange)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -119,7 +155,13 @@ export default function SignUpForm() {
             <FormItem>
               <FormLabel>Repeat Password</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="********" {...field} />
+                <Input
+                  type="password"
+                  placeholder="********"
+                  {...field}
+                  value={field.value}
+                  onChange={(e) => handleInputChange(e, field.onChange)}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
