@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/dashboard",
-      "destination": "https://dashboard.3stupidmen.com",
-      "permanent": true
-    }
-  ]
-}
